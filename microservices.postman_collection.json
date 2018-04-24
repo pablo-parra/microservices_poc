@@ -1,0 +1,201 @@
+{
+	"id": "254f0445-1456-d139-b86c-1d29ea586a15",
+	"name": "microservices",
+	"description": "",
+	"auth": null,
+	"events": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0060bca8-ed48-425c-82ed-da4d7875cda6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3daf9c9f-c5a3-4f78-858e-53b87bb31100",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variables": [],
+	"order": [
+		"6a492844-d548-e485-fed2-7f4d833d5ccc",
+		"6c749275-a205-03e7-c6fd-b340816e3289",
+		"a99f8790-4f5c-46db-40d7-406a0578de63",
+		"4586ee64-295d-6bb5-d635-4eb79f07e3b6",
+		"b6403c36-e17a-e5d4-97a8-f2069f53d9ed",
+		"ae4795a2-eeb6-4267-ebab-7a26470322fc"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "4586ee64-295d-6bb5-d635-4eb79f07e3b6",
+			"name": "sampleApp1 sayYourName",
+			"url": "http://localhost:8081/sampleapp1/services/rest/foomanagement/v1/sayYourName",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: {{token}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "6a492844-d548-e485-fed2-7f4d833d5ccc",
+			"name": "login",
+			"url": "localhost:8081/service-auth/services/rest/login",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96333b61-7214-4236-b721-0fe610b47d4e",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"token\", jsonData.accessToken);",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"folder": null,
+			"rawModeData": "{\n\t\"j_username\":\"pablo\",\n\t\"j_password\":\"1234\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "6c749275-a205-03e7-c6fd-b340816e3289",
+			"name": "foo",
+			"url": "http://localhost:8081/sampleapp1/services/rest/foomanagement/v1/foo",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: {{token}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "a99f8790-4f5c-46db-40d7-406a0578de63",
+			"name": "fooRemote",
+			"url": "http://localhost:8081/sampleapp1/services/rest/foomanagement/v1/fooRemote",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: {{token}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ae4795a2-eeb6-4267-ebab-7a26470322fc",
+			"name": "sampleApp1 ask sampleApp2 his name",
+			"url": "http://localhost:8081/sampleapp1/services/rest/foomanagement/v1/askToSampleApp2HisName",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: {{token}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b6403c36-e17a-e5d4-97a8-f2069f53d9ed",
+			"name": "sampleApp2 sayYourName",
+			"url": "http://localhost:8081/sampleapp2/services/rest/foomanagement/v1/sayYourName",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: {{token}}\n",
+			"pathVariables": {}
+		}
+	]
+}
