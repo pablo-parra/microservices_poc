@@ -5,8 +5,8 @@ Proof of concept of microservices based on Spring Cloud
 
   - Microservices Infrastructure: Eureka, Zuul, Centralized Configurations, Auth service sample.
   - Microservices:
-    * Microservice 1: two instances (SampleApp1 & SampleApp1b)
-    * Microservice 2: one instance (SampleApp2)
+    * Microservice 1
+    * Microservice 2
 
 ## Installation of Devonfw modules (if you are new on Devonfw)
 :warning: _This project is based on **devonfw 2.4.0**_
@@ -38,7 +38,42 @@ Proof of concept of microservices based on Spring Cloud
   
     - login: returns the jwt based on a user/password POST call.
     - Through Zuul
-		* call to microservice 1 (there are two instances so the load balancer can be demonstrated reading the response)
+		* call to microservice 1
 		* call to microservice 2
 		* call to microservice 1 that also calls microservice 2
-		
+
+## Running the microservices
+You can run it using Eclipse or using the bootified artifact.
+
+### With Eclipse
+Once you have your projects imported into the Eclipse instance you can go to the main class of each one (the one with the _@SpringBootApplication_ annotation), right click on the class and select _Run As > Java Application_. You will see the output in the _Console_ Tab of Eclipse.
+Repeat the same operation in all the projects, a different _Console_ tab will show in Eclipse the output of each project.
+
+### With bootified artifact
+First create the bootified artifact (in each project) with the command
+
+`C:\...\project> mvn clean package`
+
+Repeat the same process in all the projects (eureka, zuul, config, auth, sampleApp1 and sampleApp2).
+
+### Run the infrastructure with the bootified artifacts
+Then in the _target_ directory you will find the just created _bootified_ artifact that can run in "stand alone" mode. Run the artifact with the command
+
+`C:\...\project\target> java -jar [name-of-the-project]-bootified.jar`
+
+Repeat the same process 
+
+### Run several instances of a microservices
+In the case of the microservices (sampleApp1 and sampleApp2) you can run multiple instances of each project (that will be automatically registered in Eureka) providing different server ports.
+
+In the _target_ directory launch the command
+
+`C:\...\the-project\target> java -jar -Dserver.port=[a-port-number] [project-name]-bootified.jar`
+
+Example:
+
+`C:\...\sampleapp1\target> java -jar -Dserver.port=9091 sampleapp1-bootified.jar`
+
+This will run an instance of the sampleapp1 in the 9091 port.
+
+You can repeat the same operation again with sampleapp1 or with sampleapp2.
