@@ -18,7 +18,7 @@
     <scala.version>2.10.4</scala.version>
     <querydsl.version>3.4.3</querydsl.version>
     
-    <start-class>com.capgemini.devonfw.microservices.foo.FooBootApp</start-class>
+    <start-class>com.capgemini.sampleapp2.SampleApp2</start-class>
   </properties>
 
 

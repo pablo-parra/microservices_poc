@@ -29,7 +29,7 @@
 	"order": [
 		"6a492844-d548-e485-fed2-7f4d833d5ccc",
 		"6c749275-a205-03e7-c6fd-b340816e3289",
-		"a99f8790-4f5c-46db-40d7-406a0578de63",
+		"f67f2b42-e5fe-423a-ac7d-af9939229643",
 		"4586ee64-295d-6bb5-d635-4eb79f07e3b6",
 		"b6403c36-e17a-e5d4-97a8-f2069f53d9ed",
 		"ae4795a2-eeb6-4267-ebab-7a26470322fc"
@@ -126,30 +126,6 @@
 			"pathVariables": {}
 		},
 		{
-			"id": "a99f8790-4f5c-46db-40d7-406a0578de63",
-			"name": "fooRemote",
-			"url": "http://localhost:8081/sampleapp1/services/rest/foomanagement/v1/fooRemote",
-			"description": "",
-			"data": [],
-			"dataMode": "params",
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "{{token}}",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": [],
-			"folder": null,
-			"headers": "Authorization: {{token}}\n",
-			"pathVariables": {}
-		},
-		{
 			"id": "ae4795a2-eeb6-4267-ebab-7a26470322fc",
 			"name": "sampleApp1 ask sampleApp2 his name",
 			"url": "http://localhost:8081/sampleapp1/services/rest/foomanagement/v1/askToSampleApp2HisName",
@@ -177,6 +153,30 @@
 			"id": "b6403c36-e17a-e5d4-97a8-f2069f53d9ed",
 			"name": "sampleApp2 sayYourName",
 			"url": "http://localhost:8081/sampleapp2/services/rest/foomanagement/v1/sayYourName",
+			"description": "",
+			"data": [],
+			"dataMode": "params",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: {{token}}\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "f67f2b42-e5fe-423a-ac7d-af9939229643",
+			"name": "foo 2",
+			"url": "http://localhost:8081/sampleapp2/services/rest/foomanagement/v1/foo",
 			"description": "",
 			"data": [],
 			"dataMode": "params",
