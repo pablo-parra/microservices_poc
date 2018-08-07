@@ -12,7 +12,7 @@ Proof of concept of microservices based on Spring Cloud
   1. Download [devonfw](http://de-mucevolve02/files/devonfw/)
   2. Initialize the distribution executing the _create-or-update-workspace.bat_ script
   2. Launch the _console.bat_ script and install the microservices module
-  	`C:...\Devon-dist\workspaces\examples\devon>mvn install`
+  	`C:...\Devon-dist\workspaces\examples\devon\modules\microservices>mvn install`
   3. Clone this repository in a new directory _microservices_poc_ created in your _workspaces_ folder
   4. Execute the script _update-all-workspaces.bat_ to generate the Eclipse instance for the _microservices_poc_ project
   5. Launch the just created _eclipse-microservices_poc.bat_ script and import the microservices projects included in this repo.
