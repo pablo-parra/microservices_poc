@@ -7,13 +7,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
-import com.capgemini.devonfw.microservices.annotation.EnableMicroservices;
+import com.devonfw.microservices.annotation.EnableMicroservices;
 
 @EnableMicroservices
 @Configuration
 @EnableAutoConfiguration
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.capgemini.devonfw", "com.capgemini.sampleapp2" })
+@ComponentScan(basePackages = { "com.devonfw", "com.capgemini.sampleapp2" })
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
 public class SampleApp2 {
 

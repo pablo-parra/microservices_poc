@@ -9,6 +9,7 @@ import com.capgemini.sampleapp1.foo.service.api.FooMessageTo;
 import com.capgemini.sampleapp1.foo.service.api.rest.FooClient;
 import com.capgemini.sampleapp1.foo.service.api.rest.FoomanagementRestService;
 import com.capgemini.sampleapp1.foo.service.api.rest.SampleApp2Client;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 /**
  */
@@ -49,12 +50,18 @@ public class FoomanagementRestServiceImpl implements FoomanagementRestService {
   }
 
   @Override
+  @HystrixCommand(fallbackMethod = "defaultResponse")
   public FooMessageTo askToSampleApp2HisName() {
 
     FooMessageTo response = this.sampleApp2Client.askToSampleApp2HisName();
     response.setMsg("I am ".concat(this.applicationName).concat(". From port: ")
         .concat(String.valueOf(this.applicationPort)).concat(". SampleApp2 has answered: ").concat(response.getMsg()));
     return response;
+  }
+
+  private FooMessageTo defaultResponse() {
+
+    return new FooMessageTo(this.applicationPort + " : The sampleApp2 is down, nobody is perfect!! ¯\\_(ツ)_/¯ ");
   }
 
 }

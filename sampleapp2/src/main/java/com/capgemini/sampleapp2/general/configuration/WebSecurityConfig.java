@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import com.capgemini.devonfw.microservices.configuration.jwt.JsonWebTokenSecurityConfig;
-import com.capgemini.devonfw.microservices.configuration.jwt.JsonWebTokenUtility;
+import com.devonfw.microservices.configuration.jwt.JsonWebTokenSecurityConfig;
+import com.devonfw.microservices.configuration.jwt.JsonWebTokenUtility;
 
 /**
  * Security configuration based on {@link WebSecurityConfigurerAdapter}.
@@ -26,13 +26,13 @@ public class WebSecurityConfig extends JsonWebTokenSecurityConfig {
   @Override
   protected void setupAuthorization(HttpSecurity http) throws Exception {
 
-    //Unsecure resources (triggers for actuator and more)
+    // Unsecure resources (triggers for actuator and more)
     String[] unsecuredResources = new String[] { "/health", "/info", "/metrics", "/trace", "/refresh" };
 
     http.authorizeRequests()
-        //allow Options request
+        // allow Options request
         .antMatchers(HttpMethod.OPTIONS).permitAll()
-        //allow unsecure resources
+        // allow unsecure resources
         .antMatchers(unsecuredResources).permitAll()
         // authenticate all other requests
         .anyRequest().authenticated();

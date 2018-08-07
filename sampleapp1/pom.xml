@@ -12,7 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.7</java.version>
+    <java.version>1.8</java.version>
     <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
     <oasp4j.version>2.5.0</oasp4j.version>
     <scala.version>2.10.4</scala.version>
@@ -47,16 +47,11 @@
   <dependencies>
   
     <dependency>
-      <groupId>com.capgemini.devonfw.microservices</groupId>
+      <groupId>com.devonfw.microservices</groupId>
       <artifactId>microservices</artifactId>
-      <version>2.3.1</version>
+      <version>2.4.0</version>
     </dependency>
-    <!--  Changed for starter project -->
-    <!--  <dependency>
-      <artifactId>devonfw-microservices-starter</artifactId>
-      <groupId>com.capgemini.devonfw.starter</groupId>
-      <version>2.3.1</version>
-    </dependency> -->
+
     <dependency>
       <groupId>io.oasp.java.modules</groupId>
       <artifactId>oasp4j-batch</artifactId>

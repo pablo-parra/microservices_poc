@@ -1,6 +1,6 @@
 package com.capgemini.sampleinfra.auth.auth.service.api;
 
-import com.capgemini.devonfw.microservices.configuration.jwt.JsonWebTokenAuthenticationFilter;
+import com.devonfw.microservices.configuration.jwt.JsonWebTokenAuthenticationFilter;
 
 public class JwtHeaderTo {
 
@@ -15,6 +15,7 @@ public class JwtHeaderTo {
   private String refreshHeaderName;
 
   public JwtHeaderTo(String accessToken, String refreshToken, Long expirationTime) {
+
     setAccessToken(accessToken);
     setRefreshToken(refreshToken);
     setExpirationTime(expirationTime);

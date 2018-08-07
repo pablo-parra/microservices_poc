@@ -25,21 +25,14 @@
   
   <dependencyManagement>
     <dependencies>
-<!--       <dependency>
+       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-parent</artifactId>
         <version>Dalston.SR4</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency> -->
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Camden.BUILD-SNAPSHOT</version>
-        <type>pom</type>
-        <scope>import</scope>
       </dependency>
-    </dependencies>
+    </dependencies> 
   </dependencyManagement>
  
    <dependencies>

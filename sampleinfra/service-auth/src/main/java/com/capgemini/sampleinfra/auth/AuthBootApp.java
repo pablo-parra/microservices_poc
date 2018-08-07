@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 
-import com.capgemini.devonfw.microservices.annotation.EnableMicroservices;
+import com.devonfw.microservices.annotation.EnableMicroservices;
 
 @EnableMicroservices
 @Configuration

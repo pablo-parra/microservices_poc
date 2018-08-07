@@ -14,14 +14,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-
-import com.capgemini.devonfw.microservices.configuration.jwt.JsonWebTokenAuthenticationFilter;
-import com.capgemini.devonfw.microservices.configuration.jwt.JsonWebTokenUtility;
-import com.capgemini.devonfw.microservices.configuration.jwt.UserDetailsJsonWebTokenAbstract;
-import com.capgemini.devonfw.microservices.configuration.jwt.UserDetailsJsonWebTokenTo;
 import com.capgemini.sampleinfra.auth.auth.service.api.JwtHeaderTo;
 import com.capgemini.sampleinfra.auth.auth.service.api.LoginTo;
 import com.capgemini.sampleinfra.auth.auth.service.api.rest.SecuritymanagementRestService;
+import com.devonfw.microservices.configuration.jwt.JsonWebTokenAuthenticationFilter;
+import com.devonfw.microservices.configuration.jwt.JsonWebTokenUtility;
+import com.devonfw.microservices.configuration.jwt.UserDetailsJsonWebTokenAbstract;
+import com.devonfw.microservices.configuration.jwt.UserDetailsJsonWebTokenTo;
 
 /**
  *
