@@ -9,6 +9,7 @@ Proof of concept of microservices based on Spring Cloud
     * Microservice 2: one instance (SampleApp2)
 
 ## Installation of Devonfw modules (if you are new on Devonfw)
+:warning: _This project is based on **devonfw 2.4.0**_
   1. Download [devonfw](http://de-mucevolve02/files/devonfw/)
   2. Initialize the distribution executing the _create-or-update-workspace.bat_ script
   2. Launch the _console.bat_ script and install the microservices module
