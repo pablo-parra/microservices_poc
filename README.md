@@ -43,14 +43,19 @@ Proof of concept of microservices based on Devonfw (Spring Cloud). More info [he
 		* call to microservice 1 that also calls microservice 2
 
 ## Running the microservices
-You can run it using Eclipse or using the bootified artifact. In order to see all the system working together you will need to run the following list of services:
+You can run it using _Eclipse_, _Maven_ or using the _bootified_ artifact of each project. In order to see all the system working together you will need to run the following list of infrastructure services:
 
 * service-eureka
 * service-zuul
 * service-configserver
 * service-auth
 
-And then you can launch the microservices (_sampleapp1_ and _sampleapp2_). As we will see at the end you can run as many instances as you want of each microservice, only using different port.
+And then you need to launch the microservices: 
+
+* sampleapp1
+* sampleapp2
+
+As we will see later you can run as many instances as you want of each microservice, only using a different port.
 
 Once everything is up and running you can go to the url `http://localhost:8761/` (the Eureka's url) and see the status of the system.
 
@@ -61,10 +66,10 @@ Repeat the same operation in all the projects, a different _Console_ tab will sh
 ### With Maven
 To run the services from a command line, as all are Spring Boot projects, you can use _Maven_ to run each of them. Go to the root of each project (where the _pom.xml_ file is located) and use the command (with different command line instance for each project):
 
-`C:\...\server-whatever> mvn spring-boot:run`
+`C:\...\the-project> mvn spring-boot:run`
 
 #### Run multiple instances of a microservice with Maven
-In the case of the microservices (_sampleApp1_ and _sampleApp2_) you can run multiple instances of each project (that will be automatically registered in Eureka) providing different server ports.
+In the case of the microservices (_sampleApp1_ and _sampleApp2_) you can run multiple instances of each project (that will be automatically registered in _Eureka_) providing different server ports.
 
 In the root directory of the microservice you want to replicate run the command
 
