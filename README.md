@@ -1,5 +1,5 @@
 # microservices_poc
-Proof of concept of microservices based on Spring Cloud
+Proof of concept of microservices based on Devonfw (Spring Cloud). More info [here](https://github.com/devonfw/devon/wiki/devon-microservices)
 
 ## The Project Includes
 
@@ -43,13 +43,43 @@ Proof of concept of microservices based on Spring Cloud
 		* call to microservice 1 that also calls microservice 2
 
 ## Running the microservices
-You can run it using Eclipse or using the bootified artifact.
+You can run it using Eclipse or using the bootified artifact. In order to see all the system working together you will need to run the following list of services:
+
+* service-eureka
+* service-zuul
+* service-configserver
+* service-auth
+
+And then you can launch the microservices (_sampleapp1_ and _sampleapp2_). As we will see at the end you can run as many instances as you want of each microservice, only using different port.
+
+Once everything is up and running you can go to the url `http://localhost:8761/` (the Eureka's url) and see the status of the system.
 
 ### With Eclipse
 Once you have your projects imported into the Eclipse instance you can go to the main class of each one (the one with the _@SpringBootApplication_ annotation), right click on the class and select _Run As > Java Application_. You will see the output in the _Console_ Tab of Eclipse.
 Repeat the same operation in all the projects, a different _Console_ tab will show in Eclipse the output of each project.
 
+### With Maven
+To run the services from a command line, as all are Spring Boot projects, you can use _Maven_ to run each of them. Go to the root of each project (where the _pom.xml_ file is located) and use the command (with different command line instance for each project):
+
+`C:\...\server-whatever> mvn spring-boot:run`
+
+#### Run multiple instances of a microservice with Maven
+In the case of the microservices (_sampleApp1_ and _sampleApp2_) you can run multiple instances of each project (that will be automatically registered in Eureka) providing different server ports.
+
+In the root directory of the microservice you want to replicate run the command
+
+`C:\...\the-project> mvn -Dserver.port=[a-port-number] spring-boot:run`
+
+Example:
+
+`C:\...\sampleapp1> mvn -Dserver.port=9092 spring-boot:run`
+
+This will run an instance of the sampleapp1 in the 9092 port.
+
+
 ### With bootified artifact
+Alternatively to the _Maven_ option you can run the Spring Boot projects using the bootified artifact that is created in the _packaging_ process of each project.
+
 First create the bootified artifact (in each project) with the command
 
 `C:\...\project> mvn clean package`
@@ -63,8 +93,8 @@ Then in the _target_ directory you will find the just created _bootified_ artifa
 
 Repeat the same process 
 
-### Run several instances of a microservices
-In the case of the microservices (sampleApp1 and sampleApp2) you can run multiple instances of each project (that will be automatically registered in Eureka) providing different server ports.
+#### Run multiple instances of a microservice with the bootified artifact
+In the case of the microservices (_sampleApp1_ and _sampleApp2_) you can run multiple instances of each project (that will be automatically registered in Eureka) providing different server ports.
 
 In the _target_ directory launch the command
 
